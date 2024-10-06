@@ -1,0 +1,5 @@
+---
+  - instance: "netbox.hellgate"
+    url: "https://netbox.hellgate"
+    ip_address: "172.16.200.11"
+    api_token: "00bc275048ba941e952f17dda1f5ce9654870832"
