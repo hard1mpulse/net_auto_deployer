@@ -1,6 +1,5 @@
 import pynetbox,logging,os
 from dotenv import load_dotenv
-from mako.testing.helpers import result_lines
 
 from modules.configuration_reader import read_yamls_from_dir
 load_dotenv()
@@ -41,5 +40,5 @@ def get_devices_list_from_nb_instances(nb_instances: list):
 
 def get_device_params(nb_device):
     result={}
-    result.update({"role" : nb_device.role.name, "name" : nb_device.name, "platform" : nb_device.platform.name, "ip_address" : nb_device.primary_ip.address, "transport_method" : nb_device.custom_fields["transport_method"]})
+    result.update({"role" : nb_device.role.name, "name" : nb_device.name, "platform" : nb_device.platform.name, "ip_address" : nb_device.primary_ip.address, "transport_method" : nb_device.custom_fields["transport_method"],"transport_cred" : nb_device.custom_fields["transport_cred"]})
     return result
