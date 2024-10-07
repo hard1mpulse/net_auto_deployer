@@ -1,0 +1,8 @@
+---
+  url: "https://netbox.hellgate"
+  token: "00bc275048ba941e952f17dda1f5ce9654870832"
+  filters:
+      - switches:
+            role: "switch"
+      - routers:
+            role: "router"

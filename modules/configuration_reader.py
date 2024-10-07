@@ -13,9 +13,8 @@ def read_yaml_configuration(configuration_file : str):
 def read_yamls_from_dir(directory : str):
     result={}
     dir_name = os.path.dirname(os.path.abspath(__file__))
-    print(dir_name)
-    conf_files=[item for item in os.listdir(dir_name+"\.."+directory) if ".yml" in item]
+    conf_files=[item for item in os.listdir(dir_name+"/.."+directory) if ".yml" in item]
     for file in conf_files:
-        params=read_yaml_configuration(dir_name+"\.."+directory+file)
+        params=read_yaml_configuration(dir_name+"/.."+directory+file)
         result.update({file.split('.')[0] : params})
     return result
