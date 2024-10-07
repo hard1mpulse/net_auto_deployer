@@ -30,7 +30,7 @@ def get_devices_list_from_nb_instances(nb_instances: list):
                     if len(filtered_devices) == 0:
                         logger.warning(f'No devices found on filter \"{filter_name}\" on instance {params['url']}!')
                     else:
-                        logger.info(f'Found {len(filtered_devices)} devices matching filter {filter_name} on instance {params['url']}')
+                        logger.info(f'Found {len(filtered_devices)} devices matching filter {filter_name} on instance {params['url']}!')
                     matched_devices.extend(filtered_devices)
             else:
                 logger.info(f'No filters NetBox instance {params['url']} applied! Exporting all devices...')
