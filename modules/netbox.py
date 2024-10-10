@@ -17,7 +17,7 @@ def create_netbox_connection(netbox_params : dict):
         return False
 def get_devices_list_from_nb_instances(nb_instances: list):
     result={}
-    for instance,params in read_yamls_from_dir(conf_dir+"netbox_instances/").items():
+    for instance,params in read_yamls_from_dir("netbox_instances/").items():
         if nb:=create_netbox_connection(params):
             matched_devices = []
             if type(params['filters']) == list :

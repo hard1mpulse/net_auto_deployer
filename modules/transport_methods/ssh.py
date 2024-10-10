@@ -3,11 +3,11 @@ from netmiko import ConnectHandler
 from modules.mapper import platform_to_device_type_mapper,device_type_to_commands_mapper
 from modules.configuration_reader import read_yamls_from_dir
 
-credentials=read_yamls_from_dir('configurations/credentials/')
 
 logger = logging.getLogger(__name__)
 
 def create_ssh_connection (device : dict):
+    credentials = read_yamls_from_dir('credentials/')
     if device["transport_cred"] in credentials.keys() and credentials[device["transport_cred"]]["transport_method"] == device["transport_method"] :
         logger.info(f'For device {device['name']} found associated credential {device["transport_cred"]}')
         used_cred=credentials[device["transport_cred"]]

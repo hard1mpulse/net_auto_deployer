@@ -3,10 +3,14 @@
   token: "00bc275048ba941e952f17dda1f5ce9654870832"
   filters:
       ### All devices with role switch and with tag backups
-#      - switches:
-#            role: "switch"
-#            tag: ["backups"]
+      - switches:
+            role: "switch"
+            tag: ["backups"]
       ### All devices with role router and with tag backups
       - routers:
             role: "router"
-            tag: ["backups","dev_test"]
+            tag: ["backups"]
+      ### All devices with role AP and with tag backups
+      - routers:
+            role: "ap"
+            tag: ["backups"]
