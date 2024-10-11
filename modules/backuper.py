@@ -20,7 +20,7 @@ def write_backup(backup: str,device: str):
             file.write(backup)
 
 def push_backups_to_git():
-    if os.system(f'cd {env_params["GITHUB_DIR"]} && git add *.backup && git commit -m "Added backups from {time.strftime("%d-%m-%Y")}" && git push -u origin master') == 0:
+    if os.system(f'cd {env_params["GITHUB_DIR"]} && git add *.backup  && git commit -m "Added backups from {time.strftime("%d-%m-%Y")}" && git push -u origin master') == 0:
         logger.info(f"Successfully pushed backups to github from directory {env_params["GITHUB_DIR"]}!")
     else:
         logger.info(f"Some error recieved while pushing backups to github from directory {env_params["GITHUB_DIR"]}!")
