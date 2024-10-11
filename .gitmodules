@@ -1,0 +1,3 @@
+[submodule "backups/github"]
+	path = backups/github
+	url = https://github.com/hard1mpulse/hellgate_backups.git

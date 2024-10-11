@@ -11,6 +11,6 @@
             role: "router"
             tag: ["backups"]
       ### All devices with role AP and with tag backups
-      - routers:
+      - aps:
             role: "ap"
             tag: ["backups"]
