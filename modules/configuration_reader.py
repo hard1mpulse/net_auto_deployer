@@ -26,7 +26,7 @@ def read_yaml_configuration(configuration_file : str):
             return False
 def read_yamls_from_dir(directory : str):
     result={}
-    conf_files=[item for item in os.listdir(env_params["CONFIGURATIONS_DIR"]+directory) if ".yml" in item]
+    conf_files=[item for item in os.listdir(env_params["CONFIGURATIONS_DIR"]+directory) if ".yml" in item and not "_example.yml" in item]
     for file in conf_files:
         params=read_yaml_configuration(env_params["CONFIGURATIONS_DIR"]+directory+file)
         result.update({file.split('.')[0] : params})
