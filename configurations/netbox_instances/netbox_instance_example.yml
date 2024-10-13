@@ -1,6 +1,7 @@
 ---
   url: "https://my.netbox.instance.com"
   token: "my_api_token"
+  ssl_no_check_certificate: False
   filters:
       ### All devices with role switch and with tag backups
       - switches:
