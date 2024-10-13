@@ -8,9 +8,7 @@ env_params=import_env_params()
 backuper_config = read_yaml_configuration(env_params["CONFIGURATIONS_DIR"] + "backuper.yml")
 logging.basicConfig(level=logging.INFO, format='%(asctime)s - %(name)s - %(levelname)s - %(message)s', filename=env_params["LOG_FILE"])
 logger = logging.getLogger(__name__)
-
-nb_instances=read_yamls_from_dir('netbox_instances/')
-for instance,devices in get_devices_list_from_nb_instances(nb_instances).items():
+for instance,devices in get_devices_list_from_nb_instances().items():
     for device in devices:
         if ssh_conn:=create_ssh_connection(device):
             write_backup(get_backup_from_device_via_ssh(ssh_conn),device["name"])

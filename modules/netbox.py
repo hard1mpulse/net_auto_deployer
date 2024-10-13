@@ -1,5 +1,7 @@
 import pynetbox,logging,os
 from dotenv import load_dotenv
+from duplicity.config import ssl_no_check_certificate
+from httplib2.auth import params
 
 from modules.configuration_reader import read_yamls_from_dir
 load_dotenv()
@@ -9,13 +11,13 @@ logger = logging.getLogger(__name__)
 def create_netbox_connection(netbox_params : dict):
     logger.info(f'Trying to connect to NetBox instance {netbox_params['url']}...')
     try:
-        nb = pynetbox.api(netbox_params['url'],netbox_params['token'])
+        nb = pynetbox.api(netbox_params['url'],netbox_params['token'],netbox_params['ssl_no_check_certificate'])
         logger.info(f'Connection to NetBox instance {netbox_params['url']} successful!')
         return nb
     except:
         logger.error(f'Failed to connect to  NetBox instance {netbox_params['url']}!')
         return False
-def get_devices_list_from_nb_instances(nb_instances: list):
+def get_devices_list_from_nb_instances():
     result={}
     for instance,params in read_yamls_from_dir("netbox_instances/").items():
         if nb:=create_netbox_connection(params):
