@@ -1,5 +1,0 @@
----
-### Allowed storage methods local,github
-  storage_method: [
-    local,
-    github]

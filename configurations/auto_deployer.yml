@@ -1,0 +1,12 @@
+---
+### 2 options available
+### "all" - Requires to set filename in configurations/command_sets as argument to main.py
+### "filters" - Finds files in configurations/command_sets and send it only on devices,
+### selected by filter applied in your netbox instance configuration file
+  deploy_method: "filters"
+### 2 options available
+### "local" if you dont have custom fields "transport_cred" and "transport_method" in your netbox
+### associated with your devices in netbox.Use mapper.yml to associate credential with filter you use for devices
+### "netbox_cf" if you set custom fields "transport_cred" and "transport_method" in your netbox
+### On both options yoy need to setup credentials yml in configurations/credentials (see cred_example.yml)
+  cred_matching_method: "netbox_cf"

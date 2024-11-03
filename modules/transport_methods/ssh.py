@@ -31,10 +31,14 @@ def create_ssh_connection (device : dict):
         return False
     return ssh_connection
 
-def get_backup_from_device_via_ssh(ssh_session):
-    try:
-        backup=ssh_session.send_command(device_type_to_commands_mapper[ssh_session.device_type]["get_backup"])
-        return backup
-    except:
-        logger.error(f'Failed to get backup from device {device['name']} using command {device_type_to_commands_mapper[ssh_session.device_type]["get_backup"]}!!!')
-        return False
+# def get_backup_from_device_via_ssh(ssh_session):
+#     try:
+#         backup=ssh_session.send_command(device_type_to_commands_mapper[ssh_session.device_type]["get_backup"])
+#         return backup
+#     except:
+#         logger.error(f'Failed to get backup from device {device['name']} using command {device_type_to_commands_mapper[ssh_session.device_type]["get_backup"]}!!!')
+#         return False
+
+def push_command_to_device_via_ssh(ssh_session,command: list):
+    command_result=ssh_session.send_command(command)
+    return command_result

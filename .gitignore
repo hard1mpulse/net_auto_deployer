@@ -1,6 +1,8 @@
 log.txt
 configurations/credentials/*
 configurations/netbox_instances/*
+configurations/command_sets/*
 backups/local/*
 !configurations/credentials/cred_example.yml
 !configurations/netbox_instances/netbox_instance_example.yml
+!configurations/command_sets/command_set_example.list
