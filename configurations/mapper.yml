@@ -1,18 +1,24 @@
 ---
+### Used to map filtered devices with cred if you use "local" cred matching method in auto_deployer.yml and select
+### delpoy method. If you need to get some info from device before you deploying your commands on device...TBD
   filters:
     mikrotik_switches:
         transport_cred: "r2d2_ssh"
         command_set: "mikrotik_switches"
         transport_method: "ssh"
+        rendering: False
     mikrotik_routers:
         transport_cred: "r2d2_ssh"
         command_set: "mikrotik_routers"
         transport_method: "ssh"
+        rendering: False
     mikrotik_aps:
         transport_cred: "r2d2_ssh"
         command_set: "mikrotik_aps"
         transport_method: "ssh"
+        rendering: False
     all:
         transport_cred: "r2d2_ssh"
         command_set: "mikrotik_aps"
         transport_method: "ssh"
+        rendering: False
