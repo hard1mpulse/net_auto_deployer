@@ -1,7 +1,13 @@
 ---
   url: "https://my.netbox.instance.com"
   token: "my_api_token"
-  ssl_no_check_certificate: False
+  ssl_no_check_certificate: True
+  prerenders:
+        mikrotik_all:
+              - command: "interface/print"
+                tfsm_template: "mikrotik_all"
+              - command: "routing/bgp/connection/print"
+                tfsm_template: "mikrotik_bgp_peer"
   filters:
       ### All devices with role switch and with tag backups
       - switches:

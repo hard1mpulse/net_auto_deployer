@@ -1,0 +1,9 @@
+Value intf_id (\d+)
+Value intf_state (\S+)
+Value intf_name (\S+)
+Value intf_type (\S+)
+Value intf_mtu (\d+)
+Value intf_mac (\S{2}:\S{2}:\S{2}:\S{2}:\S{2}:\S{2})
+
+Start
+  ^.*${intf_id}\s+${intf_state}\s+${intf_name}\s+${intf_type}\s+${intf_mtu}.*${intf_mac} -> Record

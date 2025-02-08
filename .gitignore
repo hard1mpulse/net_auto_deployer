@@ -2,7 +2,12 @@ log.txt
 configurations/credentials/*
 configurations/netbox_instances/*
 configurations/command_sets/*
+configurations/templates/*
 backups/local/*
 !configurations/credentials/cred_example.yml
 !configurations/netbox_instances/netbox_instance_example.yml
 !configurations/command_sets/command_set_example.list
+!configurations/templates/j2_templates/j2template_example.j2
+!configurations/templates/tfsm_templates/tfsm_template_example.fsm
+!configurations/templates/tfsm_templates/mikrotik_all.fsm
+!configurations/templates/tfsm_templates/mikrotik_bgp_peer.fsm

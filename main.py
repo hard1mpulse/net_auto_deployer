@@ -32,7 +32,7 @@ for instance,devices in get_devices_list_from_nb_instances().items():
                         logger.info(f"Command {command} sent to device {device["name"]} and recieved some error message: {command_result}")
                     else:
                         logger.info(f"Command {command} sent to device {device["name"]} and recieved some answer: {command_result}")
-
+                ssh_conn.disconnect()
     if auto_deployer_config["deploy_method"] == "filters":
         for device in devices:
             if ssh_conn:=create_ssh_connection(device):
@@ -44,3 +44,4 @@ for instance,devices in get_devices_list_from_nb_instances().items():
                         logger.info(f"Command {command} sent to device {device["name"]} and recieved some error message: {command_result}")
                     else:
                         logger.info(f"Command {command} sent to device {device["name"]} and recieved some answer: {command_result}")
+                ssh_conn.disconnect()
