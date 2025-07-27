@@ -16,6 +16,18 @@ def read_tfsm_template(file: str):
         except:
             logger.critical(f'Fsm template {file} wasnt readed!')
             return False
+
+def read_ttp_template(file: str):
+    with open(env_params["TEMPLATES_DIR"]+"ttp_templates/"+file+".ttp") as file:
+        try:
+            logger.info(f'Trying to read ttp template {file}...')
+            ttp_template = file.read()
+            logger.info(f'TTP template {file} was readed successfully!')
+            return ttp_template
+        except:
+            logger.critical(f'TTP template {file} wasnt readed!')
+            return False
+
 def check_prerender(nb_instance,device):
     conf=read_yaml_configuration(env_params["CONFIGURATIONS_DIR"]+"netbox_instances"+nb_instance+".yml")
     if device['filter'] in conf['prerender'].keys():
